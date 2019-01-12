@@ -7,8 +7,11 @@ public class ConsumerTest {
     public void consumer1(){
         ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext(
                 "consumer.xml");
+        System.out.println("load");
         context.start();
-        DemoService demoService=(DemoService)context.getBean("demoService");
+        System.out.println("start");
+        DemoService demoService=(DemoService) context.getBean("demoService");
+        System.out.println("bean");
         System.out.println(demoService.sayHello("思寒"));
 
     }
